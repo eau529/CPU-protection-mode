@@ -1,0 +1,109 @@
+ELF 头：
+  Magic：   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  类别:                              ELF32
+  数据:                              2 补码，小端序 (little endian)
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI 版本:                          0
+  类型:                              EXEC (可执行文件)
+  系统架构:                          Intel 80386
+  版本:                              0x1
+  入口点地址：               0x7c00
+  程序头起点：          52 (bytes into file)
+  Start of section headers:          35012 (bytes into file)
+  标志：             0x0
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         5
+  Size of section headers:           40 (bytes)
+  Number of section headers:         16
+  Section header string table index: 15
+
+节头：
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .text             PROGBITS        00007c00 000c00 000569 00  AX  0   0  1
+  [ 2] .rodata           PROGBITS        00009000 002000 000018 00   A  0   0  1
+  [ 3] .eh_frame         PROGBITS        00009018 002018 0000f0 00   A  0   0  4
+  [ 4] .data             PROGBITS        0000b000 003000 0048ec 00  WA  0   0 4096
+  [ 5] .bss              NOBITS          0000f900 0078ec 004804 00  WA  0   0 32
+  [ 6] .comment          PROGBITS        00000000 0078ec 00002b 01  MS  0   0  1
+  [ 7] .debug_aranges    PROGBITS        00000000 007918 000040 00      0   0  8
+  [ 8] .debug_info       PROGBITS        00000000 007958 00048c 00      0   0  1
+  [ 9] .debug_abbrev     PROGBITS        00000000 007de4 000187 00      0   0  1
+  [10] .debug_line       PROGBITS        00000000 007f6b 00021b 00      0   0  1
+  [11] .debug_str        PROGBITS        00000000 008186 000287 01  MS  0   0  1
+  [12] .debug_line_str   PROGBITS        00000000 00840d 00005a 01  MS  0   0  1
+  [13] .symtab           SYMTAB          00000000 008468 000250 10     14  11  4
+  [14] .strtab           STRTAB          00000000 0086b8 000172 00      0   0  1
+  [15] .shstrtab         STRTAB          00000000 00882a 000097 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  D (mbind), p (processor specific)
+
+There are no section groups in this file.
+
+程序头：
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x000000 0x00007000 0x00006000 0x000d4 0x000d4 R   0x1000
+  LOAD           0x000c00 0x00007c00 0x00007c00 0x00569 0x00569 R E 0x1000
+  LOAD           0x002000 0x00009000 0x00009000 0x00108 0x00108 R   0x1000
+  LOAD           0x003000 0x0000b000 0x0000b000 0x048ec 0x09104 RW  0x1000
+  GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RWE 0x10
+
+ Section to Segment mapping:
+  段节...
+   00     
+   01     .text 
+   02     .rodata .eh_frame 
+   03     .data .bss 
+   04     
+
+There is no dynamic section in this file.
+
+该文件中没有重定位信息。
+No processor specific unwind information to decode
+
+Symbol table '.symtab' contains 37 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 FILE    LOCAL  DEFAULT  ABS start.o
+     2: 00007c00     0 NOTYPE  LOCAL  DEFAULT    1 file
+     3: 00007c13     0 NOTYPE  LOCAL  DEFAULT    1 read_self_all
+     4: 00007ea0     0 NOTYPE  LOCAL  DEFAULT    1 idt_desc
+     5: 00007e9a     0 NOTYPE  LOCAL  DEFAULT    1 gdt_desc
+     6: 00007e00     0 NOTYPE  LOCAL  DEFAULT    1 _start_32
+     7: 00007e8a     0 NOTYPE  LOCAL  DEFAULT    1 task_0_entry
+     8: 00000000     0 FILE    LOCAL  DEFAULT  ABS os.c
+     9: 00014100     4 OBJECT  LOCAL  DEFAULT    5 row.1
+    10: 0000f8e8     4 OBJECT  LOCAL  DEFAULT    4 task_tss.0
+    11: 0000f000  2048 OBJECT  GLOBAL DEFAULT    4 gdt_table
+    12: 0000f900  4096 OBJECT  GLOBAL DEFAULT    5 task0_dpl3_stack
+    13: 00011900  4096 OBJECT  GLOBAL DEFAULT    5 task1_dpl3_stack
+    14: 00007f3e    46 FUNC    GLOBAL DEFAULT    1 sys_show
+    15: 0000b800  2048 OBJECT  GLOBAL DEFAULT    4 task1_ldt_table
+    16: 00007f6c    46 FUNC    GLOBAL DEFAULT    1 task_0
+    17: 0000f800   104 OBJECT  GLOBAL DEFAULT    4 task0_tss
+    18: 0000c000  4096 OBJECT  GLOBAL DEFAULT    4 map_phy_buffer
+    19: 00007e56     0 NOTYPE  GLOBAL DEFAULT    1 timer_int
+    20: 0000801f   330 FUNC    GLOBAL DEFAULT    1 os_init
+    21: 00012900  4096 OBJECT  GLOBAL DEFAULT    5 task1_dpl0_stack
+    22: 0000f880   104 OBJECT  GLOBAL DEFAULT    4 task1_tss
+    23: 0000b000  2048 OBJECT  GLOBAL DEFAULT    4 task0_ldt_table
+    24: 00007ea6   152 FUNC    GLOBAL DEFAULT    1 do_syscall
+    25: 00007c00     0 NOTYPE  GLOBAL DEFAULT    1 _start
+    26: 00007fc8    31 FUNC    GLOBAL DEFAULT    1 outb
+    27: 0000f8ec     0 NOTYPE  GLOBAL DEFAULT    5 __bss_start
+    28: 0000e000  4096 OBJECT  GLOBAL DEFAULT    4 pg_dir
+    29: 0000f8ec     0 NOTYPE  GLOBAL DEFAULT    4 _edata
+    30: 00014104     0 NOTYPE  GLOBAL DEFAULT    5 _end
+    31: 00007e6a     0 NOTYPE  GLOBAL DEFAULT    1 syscall_handler
+    32: 00007f9a    46 FUNC    GLOBAL DEFAULT    1 task_1
+    33: 00013900  2048 OBJECT  GLOBAL DEFAULT    5 idt_table
+    34: 0000d000  4096 OBJECT  GLOBAL DEFAULT    4 pg_table
+    35: 00010900  4096 OBJECT  GLOBAL DEFAULT    5 task0_dpl0_stack
+    36: 00007fe7    56 FUNC    GLOBAL DEFAULT    1 task_sched
+
+No version information found in this file.
